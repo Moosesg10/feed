@@ -54,7 +54,7 @@ export const ProviderContext = ({ children }) => {
     setLoader(true);
     const desde = params[0];
     const hasta = params[1];
-    const res = await fetch(`http://localhost:3000/post?inicio=${desde}`);
+    const res = await fetch(`${API}post?inicio=${desde}`);
     const response = await res.json();
     if (res.status != 200) {
       setDatas(response);

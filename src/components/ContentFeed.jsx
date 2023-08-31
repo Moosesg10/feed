@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { contextGlobal } from '../context/index.contex'
+import { API } from '../ConstGloblas'
 
 const ContentFeed = () => {
     const context = useContext(contextGlobal)
@@ -16,7 +17,7 @@ return (
         setRouteDetails(`/${data.id}`)
       }}>
         <img
-          src={`http://localhost:3000/download/${data.nameImg}`}
+          src={`${API}download/${data.nameImg}`}
           alt=""
           className='images'
         />

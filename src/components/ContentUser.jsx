@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { contextGlobal } from "../context/index.contex";
 import { useState } from "react";
 import { ModalUpdate } from "./Update/ModalUpdate";
+import { API } from "../ConstGloblas";
 
 const ContentUser = () => {
     const context = useContext(contextGlobal)
@@ -16,7 +17,7 @@ const ContentUser = () => {
         {dataPostUser.map((data, index) => (
           <div className="post-dash" key={index}>
             <img
-              src={`http://localhost:3000/download/${data.nameImg}`}
+              src={`${API}download/${data.nameImg}`}
               alt=""
               className="image-dash"
             />

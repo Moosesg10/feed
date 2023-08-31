@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { contextGlobal } from "../context/index.contex";
 import { Loader } from "./Loader";
+import { API } from "../ConstGloblas";
 function Modals({ data, update, show, setShow, setDataUpdate, setPrev }) {
   const context = useContext(contextGlobal);
   const { loader } = context;
@@ -21,7 +22,7 @@ function Modals({ data, update, show, setShow, setDataUpdate, setPrev }) {
 
   const Cancel = async () => {
     const res = await fetch(
-      `http://localhost:3000/delete-preview/${data.nameImage}`
+      `${API}delete-preview/${data.nameImage}`
     );
     setNewUrl("");
     setNameFile("");

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { contextGlobal } from "../context/index.contex";
 import { useLocation, useNavigate } from "react-router-dom";
+import { API } from "../ConstGloblas";
 
 export const Menu = () => {
   const context = useContext(contextGlobal);
@@ -48,7 +49,7 @@ export const Menu = () => {
     <div>
       {!mostar && (
         <img
-          src={`http://localhost:3000/avatar/${avatar}`}
+          src={`${API}avatar/${avatar}`}
           alt="avatar"
           onClick={MenuMostar}
           width="40px"
@@ -77,7 +78,7 @@ export const Menu = () => {
           }}
         >
           <img
-            src={`http://localhost:3000/avatar/${avatar}`}
+            src={`${API}avatar/${avatar}`}
             alt=""
             width="40px"
             height="40px"

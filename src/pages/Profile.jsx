@@ -101,7 +101,7 @@ export const Profile = () => {
         }}
       >
         <img
-          src={`http://localhost:3000/avatar/${avatar}`}
+          src={`${API}avatar/${avatar}`}
           alt=""
           style={{ padding: "0", width: "300px", height: "400px" }}
         />
