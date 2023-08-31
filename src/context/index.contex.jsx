@@ -94,7 +94,7 @@ export const ProviderContext = ({ children }) => {
   const getPostUser = async (name) => {
     const params = name || dataUser.name;
 
-    const res = await fetch(`http://localhost:3000/user/${params}`);
+    const res = await fetch(`${API}user/${params}`);
     const response = await res.json();
     setDataPostUser(response);
   };
@@ -137,8 +137,8 @@ export const ProviderContext = ({ children }) => {
       "Esta seguro de eliminar el post con el ID :" + id
     );
     if (confirmas) {
-      await fetch(`http://localhost:3000/post-delete/${id}`, optionsDelete);
-      await fetch(`http://localhost:3000/file-delte/${name}`, optionsDelete);
+      await fetch(`${API}post-delete/${id}`, optionsDelete);
+      await fetch(`${API}file-delte/${name}`, optionsDelete);
       getPostUser();
       Getpost();
     }
@@ -152,7 +152,7 @@ export const ProviderContext = ({ children }) => {
       },
       body: JSON.stringify(dataUser),
     };
-    const res = await fetch("http://localhost:3000/create-user", optionsUser);
+    const res = await fetch(`${API}create-user`, optionsUser);
     if (res.status === 200) alert("Usuario Creado");
     setCreateUser(false);
   };
